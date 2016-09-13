@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/AVToggleDemonstration/AVToggleDemonstration.unity
+  isLoaded: 1
+  isActive: 1
