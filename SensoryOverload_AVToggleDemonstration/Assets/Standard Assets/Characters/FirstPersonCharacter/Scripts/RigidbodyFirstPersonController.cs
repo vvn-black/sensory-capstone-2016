@@ -10,6 +10,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [Serializable]
         public class StartingLocation {
             public float x, y, z = 0.0f;
+            public float rotation = 0.0f;
         }
 
         [Serializable]

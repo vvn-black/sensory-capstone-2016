@@ -15,6 +15,5 @@ public class DeathTrigger : MonoBehaviour {
         {
             deathScript.KillPlayer();
         }
-
     }
 }
