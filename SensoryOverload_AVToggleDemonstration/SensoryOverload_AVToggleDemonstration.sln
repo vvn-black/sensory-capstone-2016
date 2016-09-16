@@ -1,11 +1,11 @@
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{0348CA83-E1AA-4A0C-9421-7D9C6CDA742B}") = "SensoryOverload_AVToggleDemonstration", "Assembly-CSharp-firstpass.csproj", "{8CAD4A8E-7410-3D62-34BF-DE8A67DC8F98}"
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensoryOverload_AVToggleDemonstration.CSharp.Plugins", "SensoryOverload_AVToggleDemonstration.CSharp.Plugins.csproj", "{73055A44-4F93-7A2F-B793-21A48480C84C}"
 EndProject
-Project("{0348CA83-E1AA-4A0C-9421-7D9C6CDA742B}") = "SensoryOverload_AVToggleDemonstration", "Assembly-CSharp.csproj", "{0EA71567-35B5-A8B9-CA93-B346E0FE3C62}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensoryOverload_AVToggleDemonstration.CSharp", "SensoryOverload_AVToggleDemonstration.CSharp.csproj", "{007E3155-8D81-C93D-ACFB-D771EC74EEA0}"
 EndProject
-Project("{0348CA83-E1AA-4A0C-9421-7D9C6CDA742B}") = "SensoryOverload_AVToggleDemonstration", "Assembly-CSharp-Editor.csproj", "{7207CDE6-03C0-FB8E-11FD-15879577DF56}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensoryOverload_AVToggleDemonstration.CSharp.Editor", "SensoryOverload_AVToggleDemonstration.CSharp.Editor.csproj", "{1FF51766-8E7F-F059-CD2B-BD2148E019B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,23 +13,20 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8CAD4A8E-7410-3D62-34BF-DE8A67DC8F98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8CAD4A8E-7410-3D62-34BF-DE8A67DC8F98}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8CAD4A8E-7410-3D62-34BF-DE8A67DC8F98}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8CAD4A8E-7410-3D62-34BF-DE8A67DC8F98}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0EA71567-35B5-A8B9-CA93-B346E0FE3C62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0EA71567-35B5-A8B9-CA93-B346E0FE3C62}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0EA71567-35B5-A8B9-CA93-B346E0FE3C62}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0EA71567-35B5-A8B9-CA93-B346E0FE3C62}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7207CDE6-03C0-FB8E-11FD-15879577DF56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7207CDE6-03C0-FB8E-11FD-15879577DF56}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7207CDE6-03C0-FB8E-11FD-15879577DF56}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7207CDE6-03C0-FB8E-11FD-15879577DF56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73055A44-4F93-7A2F-B793-21A48480C84C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73055A44-4F93-7A2F-B793-21A48480C84C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73055A44-4F93-7A2F-B793-21A48480C84C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73055A44-4F93-7A2F-B793-21A48480C84C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{007E3155-8D81-C93D-ACFB-D771EC74EEA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{007E3155-8D81-C93D-ACFB-D771EC74EEA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{007E3155-8D81-C93D-ACFB-D771EC74EEA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{007E3155-8D81-C93D-ACFB-D771EC74EEA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FF51766-8E7F-F059-CD2B-BD2148E019B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FF51766-8E7F-F059-CD2B-BD2148E019B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FF51766-8E7F-F059-CD2B-BD2148E019B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FF51766-8E7F-F059-CD2B-BD2148E019B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
