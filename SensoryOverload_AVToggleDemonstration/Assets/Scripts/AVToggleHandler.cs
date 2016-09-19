@@ -9,6 +9,7 @@ public class AVToggleHandler : MonoBehaviour
 	public bool startBlind;
 	private bool blind = false;
 	private BlurOptimized blurryVision;
+    private Grayscale grayscale;
 	private Transform blindnessSprite;
 	private float t = 0;
 	private bool transition = false;
@@ -24,6 +25,7 @@ public class AVToggleHandler : MonoBehaviour
 	void Start () 
 	{
 		blurryVision = Camera.main.GetComponent<BlurOptimized> ();
+        grayscale = Camera.main.GetComponent<Grayscale>();
 		blindnessSprite = Camera.main.transform.FindChild ("BlindnessSprite");
 
 		// If startBlind is checked, start blind with normal audio
@@ -66,6 +68,7 @@ public class AVToggleHandler : MonoBehaviour
 				    blurryVision.blurSize <= 0 && blurryVision.blurIterations <= 1) 
 				{
 					blurryVision.enabled = false;
+                    grayscale.enabled = false;
 					blind = false;
 					transition = false;
 					StartDeaf (0);
@@ -76,7 +79,8 @@ public class AVToggleHandler : MonoBehaviour
 			else 
 			{
 				t += Time.deltaTime * transitionSpeed;
-				blindnessSprite.GetComponent<SpriteRenderer> ().color = new Color (1f, 1f, 1f, Mathf.Lerp(0, darknessLevel, t));
+                grayscale.enabled = true;
+                blindnessSprite.GetComponent<SpriteRenderer> ().color = new Color (1f, 1f, 1f, Mathf.Lerp(0, darknessLevel, t));
 				blurryVision.enabled = true;
 				blurryVision.downsample = (int)(Mathf.Lerp(0, (int)(blurLevel * 2), t));
 				blurryVision.blurSize = Mathf.Lerp(0, blurLevel * 10, t);

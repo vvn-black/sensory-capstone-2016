@@ -29,10 +29,7 @@ public class GameController : MonoBehaviour
 	{
 		foreach (AudioSource audioSource in soundEffects) 
 		{
-			if (audioSource.isPlaying) 
-			{
-				audioSource.volume = volume;
-			}
+			audioSource.volume = volume;
 		}
 	}
 
@@ -40,10 +37,6 @@ public class GameController : MonoBehaviour
 	{
 		foreach (AudioSource audioSource in soundEffects) 
 		{
-			if (!audioSource.isPlaying) 
-			{
-				audioSource.Play ();
-			}
 			audioSource.volume = volume;
 		}
 	}

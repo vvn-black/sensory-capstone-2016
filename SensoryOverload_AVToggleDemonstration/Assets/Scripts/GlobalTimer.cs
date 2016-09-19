@@ -15,6 +15,10 @@ public class GlobalTimer : MonoBehaviour {
     public Color yellowLightColor = Color.yellow;
     public Color redLightColor = Color.red;
 
+    public AudioSource green;
+    public AudioSource yellow;
+    public AudioSource red;
+
     LightColor _currentColor;
     public LightColor currentColor
     {
@@ -66,11 +70,13 @@ public class GlobalTimer : MonoBehaviour {
         if (currentColor == LightColor.Green && elapsedTime >= greenTime)
         {
             currentColor = LightColor.Yellow;
+            playYellow();
             elapsedTime = 0.0f;
         }
         else if (currentColor == LightColor.Yellow && elapsedTime >= yellowTime)
         {
             currentColor = LightColor.Red;
+            playRed();
             elapsedTime = 0.0f;
         }
         else if (currentColor == LightColor.Red && elapsedTime >= redTime)
@@ -78,7 +84,31 @@ public class GlobalTimer : MonoBehaviour {
             elapsedRepetitions++;
             elapsedTime = 0.0f;
             if (elapsedRepetitions < repetitions)
+            {
                 currentColor = LightColor.Green;
+                playGreen();
+            }
         }
+    }
+
+    void playGreen()
+    {
+        red.Stop();
+        yellow.Stop();
+        green.Play();
+    }
+
+    void playYellow()
+    {
+        red.Stop();
+        green.Stop();
+        yellow.Play();
+    }
+
+    void playRed()
+    {
+        green.Stop();
+        yellow.Stop();
+        red.Play();
     }
 }
