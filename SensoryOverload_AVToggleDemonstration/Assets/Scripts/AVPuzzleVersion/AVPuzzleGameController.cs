@@ -2,22 +2,22 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class GameController : MonoBehaviour 
+public class AVPuzzleGameController : MonoBehaviour 
 {
-	public AudioSource soundtrack;
+	//public AudioSource soundtrack;
 	public AudioSource[] soundEffects;
 
 	// The game controller subscribes to these events from other classes
 	void OnEnable()
 	{	
-		AVToggleHandler.goDeaf += Deaf;
-		AVToggleHandler.goBlind += Blind;
+		AVPuzzleToggleHandler.goDeaf += Deaf;
+		AVPuzzleToggleHandler.goBlind += Blind;
 	}
 
 	void OnDisable()
 	{
-		AVToggleHandler.goDeaf -= Deaf;
-		AVToggleHandler.goBlind -= Blind;
+		AVPuzzleToggleHandler.goDeaf -= Deaf;
+		AVPuzzleToggleHandler.goBlind -= Blind;
 	}
 
 	void Start () 

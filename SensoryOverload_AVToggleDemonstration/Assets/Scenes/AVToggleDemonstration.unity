@@ -729,6 +729,11 @@ Prefab:
       propertyPath: red
       value: 
       objectReference: {fileID: 829696241}
+    - target: {fileID: 114000011807554458, guid: fc094772edd93f748841bf713ae71a33,
+        type: 2}
+      propertyPath: repetitions
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc094772edd93f748841bf713ae71a33, type: 2}
   m_IsPrefabParent: 0
@@ -780,7 +785,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1590914423
 Transform:
   m_ObjectHideFlags: 0
