@@ -29,7 +29,10 @@ public class AVPuzzleGameController : MonoBehaviour
 	{
 		foreach (AudioSource audioSource in soundEffects) 
 		{
-			audioSource.volume = volume;
+            if (audioSource)
+            {
+                audioSource.volume = volume;
+            }
 		}
 	}
 
@@ -37,7 +40,10 @@ public class AVPuzzleGameController : MonoBehaviour
 	{
 		foreach (AudioSource audioSource in soundEffects) 
 		{
-			audioSource.volume = volume;
+            if (audioSource)
+            {
+                audioSource.volume = volume;
+            }
 		}
 	}
 }

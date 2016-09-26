@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ColliderDetector : MonoBehaviour
+public class AVPuzzleColliderDetector : MonoBehaviour
 {
     private AVPuzzleDeathScript deathScript;
     private bool nearPowerSwitch = false;
@@ -28,6 +28,8 @@ public class ColliderDetector : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
+        Debug.Log("Hit something");
+
         if (col.gameObject.tag == "Electricity")
         {
             deathScript.KillPlayer();
@@ -41,8 +43,10 @@ public class ColliderDetector : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
+        Debug.Log("Hit something");
         if (col.tag == "Power")
         {
+            Debug.Log("NearPowerSwitch");
             nearPowerSwitch = true;
         }
     }
