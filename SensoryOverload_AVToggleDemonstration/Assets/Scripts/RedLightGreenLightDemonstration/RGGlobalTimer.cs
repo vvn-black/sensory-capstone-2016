@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System;
 
-public class GlobalTimer : MonoBehaviour
-{
-    /*public enum LightColor { Green, Yellow, Red };
+public class RGGlobalTimer : MonoBehaviour {
+
+    public enum LightColor { Green, Yellow, Red };
     public GameObject lightCollection;
 
     public float greenTime = 3.0f;
@@ -110,5 +110,5 @@ public class GlobalTimer : MonoBehaviour
         green.Stop();
         yellow.Stop();
         red.Play();
-    }*/
+    }
 }

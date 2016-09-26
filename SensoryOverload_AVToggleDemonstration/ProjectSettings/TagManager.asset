@@ -8,6 +8,7 @@ TagManager:
   - Electricity
   - Power
   - Exit
+  - Tile
   layers:
   - Default
   - TransparentFX

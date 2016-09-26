@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class GameController : MonoBehaviour 
 {
 	public AudioSource soundtrack;
 	public AudioSource[] soundEffects;
+    public RigidbodyFirstPersonController player;
 
-	// The game controller subscribes to these events from other classes
-	void OnEnable()
+    // The game controller subscribes to these events from other classes
+    void OnEnable()
 	{	
 		AVToggleHandler.goDeaf += Deaf;
 		AVToggleHandler.goBlind += Blind;
@@ -22,14 +22,18 @@ public class GameController : MonoBehaviour
 
 	void Start () 
 	{
-		//soundtrack.Play ();
+        //soundtrack.Play ();
+        //player.transform.position = new Vector3(0, 0, 0);
 	}
 
 	void Deaf(float volume)
 	{
-		foreach (AudioSource audioSource in soundEffects) 
-		{
-			audioSource.volume = volume;
+        foreach (AudioSource audioSource in soundEffects)
+        {
+            if (audioSource)
+            {
+                audioSource.volume = volume;
+            }
 		}
 	}
 
@@ -37,7 +41,10 @@ public class GameController : MonoBehaviour
 	{
 		foreach (AudioSource audioSource in soundEffects) 
 		{
-			audioSource.volume = volume;
+            if (audioSource)
+            {
+                audioSource.volume = volume;
+            }
 		}
 	}
 }
