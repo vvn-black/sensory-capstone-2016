@@ -24,5 +24,6 @@ public class DeathScript : MonoBehaviour {
         playerObject.transform.eulerAngles = new Vector3(0, playerScript.startingLocation.rotation, 0);
         playerScript.mouseLook.Init(playerObject.transform, playerScript.cam.transform);
         //timer.ResetVisualTimer();
+        Debug.Log("Player killed!");
     }
 }

@@ -9,6 +9,7 @@ TagManager:
   - Power
   - Exit
   - Tile
+  - DeathScript
   layers:
   - Default
   - TransparentFX

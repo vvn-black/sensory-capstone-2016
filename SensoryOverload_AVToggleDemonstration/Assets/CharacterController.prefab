@@ -41,6 +41,7 @@ GameObject:
   - 81: {fileID: 81000012815651386}
   - 114: {fileID: 114000011102348484}
   - 114: {fileID: 114000010871345110}
+  - 114: {fileID: 114000011610273686}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -71,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011220474466}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
-  m_LocalPosition: {x: 0.16, y: 1.545, z: -17.33}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -146,7 +147,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011220474466}
   serializedVersion: 2
-  m_Mass: 5
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
@@ -230,6 +231,20 @@ MonoBehaviour:
   rigidbodyFirstPersonController: {fileID: 114000012515788596}
   StrideInterval: 4
   RunningStrideLengthen: 0.722
+--- !u!114 &114000011610273686
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012249745168}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 243a781cad112c75d0008dfa8d76c639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shader: {fileID: 4800000, guid: daf9781cad112c75d0008dfa8d76c639, type: 3}
+  textureRamp: {fileID: 0}
+  rampOffset: 0
 --- !u!114 &114000012515788596
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -242,6 +257,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 20000011415391758}
+  startingLocation:
+    x: 0.16
+    y: 1.545
+    z: -17.33
+    rotation: 180
   movementSettings:
     ForwardSpeed: 8
     BackwardSpeed: 4
