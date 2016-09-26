@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 
-public class DeathScript : MonoBehaviour {
+public class DeathScript : MonoBehaviour
+{
     public GameObject playerObject;
     private RigidbodyFirstPersonController playerScript;
     private GlobalTimer timer;

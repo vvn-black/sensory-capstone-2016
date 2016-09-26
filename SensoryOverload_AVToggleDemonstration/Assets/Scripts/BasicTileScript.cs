@@ -15,7 +15,6 @@ public class BasicTileScript : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        // ... then enable only the one checked by the game designer
         switch(tileType)
         {
             case TrapType.Audio:
