@@ -6,10 +6,8 @@ public class BasicTileScript : MonoBehaviour
     public enum TrapType { Normal, Death, Timed, Audio, Visual };
     public TrapType tileType;
     private DeathTrap deathTrap = new DeathTrap();
+    private TimedTrap timedTrap = new TimedTrap();
     private TrapScript trap;
-    //private AudioTrapScript audioTrap;
-    //private VisualTrapScript visualTrap;
-    //private TimedTrapScript timedTrap;
     private DeathScript death;
 
     // Use this for initialization
@@ -20,6 +18,8 @@ public class BasicTileScript : MonoBehaviour
             case TrapType.Audio:
             case TrapType.Visual:
             case TrapType.Timed:
+                trap = timedTrap;
+                break;
             case TrapType.Death:
                 trap = deathTrap;
                 break;
