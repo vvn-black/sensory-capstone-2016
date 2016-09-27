@@ -13,11 +13,13 @@ public class BasicTileScript : MonoBehaviour
     private TrapScript trap;
     private DeathScript death;
     private float elapsedTime;
+    private AudioSource buzzer;
 
     // Use this for initialization
     void Start ()
     {
         AVtrap = false;
+        buzzer = GameObject.FindWithTag("Buzzer").GetComponent<AudioSource>();
 
         switch(tileType)
         {
@@ -52,6 +54,10 @@ public class BasicTileScript : MonoBehaviour
             if (AVtrap && onTile)
             {
                 trap.Trigger(death);
+                if (buzzer.isPlaying)
+                {
+                    buzzer.Stop();
+                }
             }
         }
     }
@@ -62,6 +68,15 @@ public class BasicTileScript : MonoBehaviour
         {
             onTile = true;
             ResetAVTimer();
+
+            if (AVtrap)
+            {
+                if (!buzzer.isPlaying)
+                {
+                    buzzer.Play();
+                }
+            }
+
             if (trap != null && !AVtrap)
             {
                 trap.Trigger(death);
@@ -71,6 +86,11 @@ public class BasicTileScript : MonoBehaviour
 
     void OnTriggerExit(Collider c)
     {
+        if (buzzer.isPlaying)
+        {
+            buzzer.Stop();
+        }
+
         if (c.tag == "Player")
         {
             onTile = false;

@@ -10,6 +10,7 @@ TagManager:
   - Exit
   - Tile
   - DeathScript
+  - Buzzer
   layers:
   - Default
   - TransparentFX
