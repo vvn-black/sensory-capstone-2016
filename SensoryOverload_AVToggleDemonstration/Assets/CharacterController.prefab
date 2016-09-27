@@ -258,17 +258,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 20000011415391758}
   startingLocation:
-    x: 0.16
+    x: 0
     y: 1.545
     z: -17.33
     rotation: 180
   movementSettings:
-    ForwardSpeed: 8
-    BackwardSpeed: 4
-    StrafeSpeed: 4
+    ForwardSpeed: 4
+    BackwardSpeed: 2
+    StrafeSpeed: 2
     RunMultiplier: 2
     RunKey: 304
-    JumpForce: 50
+    JumpForce: 0
     SlopeCurveModifier:
       serializedVersion: 2
       m_Curve:
@@ -298,7 +298,7 @@ MonoBehaviour:
   advancedSettings:
     groundCheckDistance: 0.1
     stickToGroundHelperDistance: 0.4
-    slowDownRate: 1000
+    slowDownRate: 10000
     airControl: 1
     shellOffset: 0
 --- !u!136 &136000013663524270

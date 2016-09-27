@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class BasicTileScript : MonoBehaviour
 {
@@ -9,13 +10,15 @@ public class BasicTileScript : MonoBehaviour
     private bool onTile, active, AVtrap;
     private TrapScript trap;
     private DeathScript death;
-    public float elapsedTime;
+    private float elapsedTime;
+    private AudioSource buzzer;
 
     // Use this for initialization
     void Start ()
     {
         AVtrap = false;
         active = false;
+        buzzer = GameObject.FindWithTag("Buzzer").GetComponent<AudioSource>();
 
         switch(tileType)
         {
@@ -53,6 +56,10 @@ public class BasicTileScript : MonoBehaviour
             {
                 trap.Trigger(death);
                 // do explosion stuff here
+                if (buzzer.isPlaying)
+                {
+                    buzzer.Stop();
+                }
             }
         }
     }
@@ -63,7 +70,11 @@ public class BasicTileScript : MonoBehaviour
         {
             onTile = true;
             if (AVtrap)
+            {
                 StartTimer();
+                if (!buzzer.isPlaying)
+                    buzzer.Play();
+            }
             else if (trap != null)
                 trap.Trigger(death);
         }
@@ -71,6 +82,8 @@ public class BasicTileScript : MonoBehaviour
 
     void OnTriggerExit(Collider c)
     {
+        if (buzzer.isPlaying)
+            buzzer.Stop();
         if (c.tag == "Player")
             onTile = false;
     }
