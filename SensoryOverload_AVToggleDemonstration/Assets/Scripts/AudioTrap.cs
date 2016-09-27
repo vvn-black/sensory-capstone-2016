@@ -1,7 +1,7 @@
 ﻿using System;
 
 [Serializable]
-public class VisualTrap : TrapScript
+public class AudioTrap : TrapScript
 {
     public float trapTimer = 3.0f;
     public override float GetTrapTimer()
@@ -10,6 +10,6 @@ public class VisualTrap : TrapScript
     }
     public override void Trigger(DeathScript death)
     {
-        death.KillPlayer(); 
+        death.KillPlayer();
     }
 }

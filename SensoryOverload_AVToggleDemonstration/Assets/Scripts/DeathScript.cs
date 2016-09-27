@@ -3,12 +3,13 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class DeathScript : MonoBehaviour
 {
-    public GameObject playerObject;
+    private GameObject playerObject;
     private RigidbodyFirstPersonController playerScript;
     private GlobalTimer timer;
 
     public void Start()
     {
+        playerObject = GameObject.FindGameObjectWithTag("Player");
         playerScript = playerObject.GetComponent<RigidbodyFirstPersonController>();
         timer = GetComponentInParent<GlobalTimer>();
     }

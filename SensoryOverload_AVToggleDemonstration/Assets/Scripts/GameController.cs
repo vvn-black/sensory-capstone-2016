@@ -5,7 +5,7 @@ public class GameController : MonoBehaviour
 {
 	public AudioSource soundtrack;
 	public AudioSource[] soundEffects;
-    public RigidbodyFirstPersonController player;
+    private RigidbodyFirstPersonController player;
 
     // The game controller subscribes to these events from other classes
     void OnEnable()
@@ -22,6 +22,7 @@ public class GameController : MonoBehaviour
 
 	void Start () 
 	{
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<RigidbodyFirstPersonController>();
         //soundtrack.Play ();
         //player.transform.position = new Vector3(0, 0, 0);
 	}

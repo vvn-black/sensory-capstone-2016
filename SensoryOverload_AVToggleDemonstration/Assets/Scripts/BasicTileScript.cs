@@ -1,38 +1,37 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class BasicTileScript : MonoBehaviour
 {
     public enum TrapType { Normal, Death, Timed, Audio, Visual };
     public TrapType tileType;
-    public float AVtimer = 3.0f;
-    private bool onTile, AVtrap;
-    private DeathTrap deathTrap = new DeathTrap();
-    private TimedTrap timedTrap = new TimedTrap();
-    private VisualTrap visualTrap = new VisualTrap();
+    public VisualTrap visualTrap = new VisualTrap();
+    public AudioTrap audioTrap = new AudioTrap();
+    private bool onTile, active, AVtrap;
     private TrapScript trap;
     private DeathScript death;
-    private float elapsedTime;
+    public float elapsedTime;
 
     // Use this for initialization
     void Start ()
     {
         AVtrap = false;
+        active = false;
 
         switch(tileType)
         {
             case TrapType.Audio:
                 AVtrap = true;
+                trap = audioTrap;
                 break;
             case TrapType.Visual:
                 AVtrap = true;
                 trap = visualTrap;
                 break;
             case TrapType.Timed:
-                trap = timedTrap;
+                trap = new TimedTrap();
                 break;
             case TrapType.Death:
-                trap = deathTrap;
+                trap = new DeathTrap();
                 break;
             default:
                 trap = null;
@@ -44,14 +43,16 @@ public class BasicTileScript : MonoBehaviour
 
     void Update()
     {
-        elapsedTime += Time.deltaTime;
+        if(active)
+            elapsedTime += Time.deltaTime;
 
-        if (elapsedTime >= AVtimer)
+        if (AVtrap && elapsedTime >= trap.GetTrapTimer())
         {
-            ResetAVTimer();
-            if (AVtrap && onTile)
+            StopTimer();
+            if (onTile)
             {
                 trap.Trigger(death);
+                // do explosion stuff here
             }
         }
     }
@@ -61,25 +62,32 @@ public class BasicTileScript : MonoBehaviour
         if (c.tag == "Player")
         {
             onTile = true;
-            ResetAVTimer();
-            if (trap != null && !AVtrap)
-            {
+            if (AVtrap)
+                StartTimer();
+            else if (trap != null)
                 trap.Trigger(death);
-            }
         }
     }
 
     void OnTriggerExit(Collider c)
     {
         if (c.tag == "Player")
-        {
             onTile = false;
-            ResetAVTimer();
-        }
     }
 
     private void ResetAVTimer()
     {
         elapsedTime = 0.0f;
+    }
+
+    public void StartTimer()
+    {
+        active = true;
+    }
+
+    public void StopTimer()
+    {
+        ResetAVTimer();
+        active = false;
     }
 }
