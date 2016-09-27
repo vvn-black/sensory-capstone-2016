@@ -40,8 +40,8 @@ GameObject:
   - 20: {fileID: 20000011415391758}
   - 81: {fileID: 81000012815651386}
   - 114: {fileID: 114000011102348484}
-  - 114: {fileID: 114000010871345110}
   - 114: {fileID: 114000011610273686}
+  - 114: {fileID: 114000010871345110}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -64,17 +64,17 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4000012048033480
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011220474466}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 4, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_Children:
   - {fileID: 4000013895877522}
   m_Father: {fileID: 0}
@@ -86,7 +86,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012249745168}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
-  m_LocalPosition: {x: 0, y: 0, z: 1.227}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -259,9 +259,9 @@ MonoBehaviour:
   cam: {fileID: 20000011415391758}
   startingLocation:
     x: 0
-    y: 1.545
-    z: -17.33
-    rotation: 180
+    y: 0
+    z: 10
+    rotation: 90
   movementSettings:
     ForwardSpeed: 4
     BackwardSpeed: 2
@@ -299,7 +299,7 @@ MonoBehaviour:
     groundCheckDistance: 0.1
     stickToGroundHelperDistance: 0.4
     slowDownRate: 10000
-    airControl: 1
+    airControl: 0
     shellOffset: 0
 --- !u!136 &136000013663524270
 CapsuleCollider:
