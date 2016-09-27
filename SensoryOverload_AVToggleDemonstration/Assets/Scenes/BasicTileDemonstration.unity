@@ -668,7 +668,7 @@ GameObject:
   - 82: {fileID: 1365088555}
   m_Layer: 0
   m_Name: Buzzer
-  m_TagString: Untagged
+  m_TagString: Buzzer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
