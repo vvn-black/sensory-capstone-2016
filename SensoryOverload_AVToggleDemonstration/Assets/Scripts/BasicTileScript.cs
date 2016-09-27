@@ -45,8 +45,41 @@ public class BasicTileScript : MonoBehaviour
 
     void Update()
     {
-        if(active)
+        if (active)
+        {
             elapsedTime += Time.deltaTime;
+            if (trap == visualTrap)
+            {
+                if (elapsedTime >= 2)
+                {
+                    Renderer render = GetComponent<Renderer>();
+                    Material mat = render.material;
+                    Color _light = new Color(1.0f, 0.0f, 0.0f, 1.0f);
+                    mat.SetColor("_EmissionColor", _light);
+                }
+                else if (elapsedTime >= 1)
+                {
+                    Renderer render = GetComponent<Renderer>();
+                    Material mat = render.material;
+                    Color _light = new Color(0.7f, 0.7f, 0.0f, 1.0f);
+                    mat.SetColor("_EmissionColor", _light);
+                }
+                else
+                {
+                    Renderer render = GetComponent<Renderer>();
+                    Material mat = render.material;
+                    Color _light = new Color(0.0f, 1.0f, 0.0f, 1.0f);
+                    mat.SetColor("_EmissionColor", _light);
+                }
+            }
+        }
+        else if (trap == visualTrap)
+        {
+            Renderer render = GetComponent<Renderer>();
+            Material mat = render.material;
+            Color _light = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+            mat.SetColor("_EmissionColor", _light);
+        }
 
         if (AVtrap && elapsedTime >= trap.GetTrapTimer())
         {

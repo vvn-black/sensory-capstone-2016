@@ -103,4 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileType: 0
-  AVtimer: 3
+  visualTrap:
+    trapTimer: 3
+  audioTrap:
+    trapTimer: 3
