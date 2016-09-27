@@ -48,6 +48,10 @@ public class BasicTileScript : MonoBehaviour
         if (active)
         {
             elapsedTime += Time.deltaTime;
+
+            if (!buzzer.isPlaying && trap == audioTrap && onTile)
+                buzzer.Play();
+
             if (trap == visualTrap)
             {
                 if (elapsedTime >= 2)
@@ -68,7 +72,7 @@ public class BasicTileScript : MonoBehaviour
                 {
                     Renderer render = GetComponent<Renderer>();
                     Material mat = render.material;
-                    Color _light = new Color(0.0f, 1.0f, 0.0f, 1.0f);
+                    Color _light = new Color(0.0f, 0.5f, 0.0f, 1.0f);
                     mat.SetColor("_EmissionColor", _light);
                 }
             }
@@ -104,7 +108,7 @@ public class BasicTileScript : MonoBehaviour
             if (AVtrap)
             {
                 StartTimer();
-                if (!buzzer.isPlaying)
+                if (!buzzer.isPlaying && trap == audioTrap)
                     buzzer.Play();
             }
             else if (trap != null)
