@@ -38,9 +38,9 @@ GameObject:
   - 114: {fileID: 114000014122622686}
   - 114: {fileID: 114000012009008900}
   - 114: {fileID: 114000014099998678}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: GameController
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,7 +65,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012852954982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -84,8 +84,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundtrack: {fileID: 0}
-  soundEffects: []
-  player: {fileID: 0}
+  soundEffects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114000014099998678
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -113,6 +116,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: defb41876babd91498a017bf38cfd79f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  safeTime: 3
+  dangerTime: 11
+  safe: 0
+  danger: 0
+  countdown: {fileID: 0}
+  warning: {fileID: 0}
+  ding: {fileID: 0}
 --- !u!114 &114000014207146612
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -124,4 +134,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4bc6c03b1b91e047a6ee26595cd97ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerObject: {fileID: 0}
