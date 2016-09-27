@@ -466,8 +466,6 @@ MonoBehaviour:
     trapTimer: 3
   audioTrap:
     trapTimer: 3
-  AVtimer: 3
-  elapsedTime: 0
 --- !u!23 &725705392
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -612,8 +610,6 @@ MonoBehaviour:
     trapTimer: 3
   audioTrap:
     trapTimer: 3
-  AVtimer: 3
-  elapsedTime: 0
 --- !u!1 &1149479434 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000012249745168, guid: 0d648d3358228df4d98adb6c1c65d241,
@@ -633,6 +629,11 @@ MonoBehaviour:
   shader: {fileID: 4800000, guid: daf9781cad112c75d0008dfa8d76c639, type: 3}
   textureRamp: {fileID: 0}
   rampOffset: 0
+--- !u!20 &1149479441 stripped
+Camera:
+  m_PrefabParentObject: {fileID: 20000011415391758, guid: 0d648d3358228df4d98adb6c1c65d241,
+    type: 2}
+  m_PrefabInternal: {fileID: 1776605222}
 --- !u!1 &1273440222
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,8 +819,6 @@ MonoBehaviour:
     trapTimer: 3
   audioTrap:
     trapTimer: 3
-  AVtimer: 3
-  elapsedTime: 0
 --- !u!23 &1494193703
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1119,6 +1118,21 @@ Prefab:
       propertyPath: m_CollisionDetection
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114000012515788596, guid: 0d648d3358228df4d98adb6c1c65d241,
+        type: 2}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1149479441}
+    - target: {fileID: 114000011102348484, guid: 0d648d3358228df4d98adb6c1c65d241,
+        type: 2}
+      propertyPath: Camera
+      value: 
+      objectReference: {fileID: 1149479441}
+    - target: {fileID: 114000011102348484, guid: 0d648d3358228df4d98adb6c1c65d241,
+        type: 2}
+      propertyPath: rigidbodyFirstPersonController
+      value: 
+      objectReference: {fileID: 274637693}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d648d3358228df4d98adb6c1c65d241, type: 2}
   m_IsPrefabParent: 0
@@ -1223,8 +1237,6 @@ MonoBehaviour:
     trapTimer: 3
   audioTrap:
     trapTimer: 3
-  AVtimer: 3
-  elapsedTime: 0
 --- !u!1001 &2136144781
 Prefab:
   m_ObjectHideFlags: 0

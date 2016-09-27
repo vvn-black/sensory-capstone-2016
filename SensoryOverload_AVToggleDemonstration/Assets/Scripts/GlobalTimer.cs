@@ -14,6 +14,17 @@ public class GlobalTimer : MonoBehaviour
         elapsedTime = 0.0f;
     }
 
+    public void ResetAll()
+    {
+        ResetVisualTimer();
+        safe = false;
+        danger = true;
+        countdown.Stop();
+        warning.Stop();
+        ding.Stop();
+        countdown.Play();
+    }
+
     void Start()
     {
         ResetVisualTimer();
